@@ -1,0 +1,3627 @@
+{
+  "$type": "AEAssist.TriggerLine",
+  "Author": "绝龙诗116",
+  "ConfigVersion": 4,
+  "CurrZoneId": 0,
+  "Name": "st 配合战士",
+  "SubZoneId": 0,
+  "TargetJob": "Gunbreaker",
+  "Triggers": [
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "1.9",
+      "MaxTimes": 1,
+      "Remark": "提前2s吃爆发药（需要双插\r\n关闭中",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SwitchPotion",
+          "UsePotion": true
+        }
+      ],
+      "TriggerConds": []
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2",
+      "MaxTimes": 1,
+      "Remark": "开场提前1s无情",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16138,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_CountDown",
+          "Time": 1000
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.01",
+      "MaxTimes": 1,
+      "Remark": "开场突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_CountDown",
+          "Time": 300
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.011",
+      "MaxTimes": 1,
+      "Remark": "开场音速破",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 16153,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_CountDown",
+          "Time": 100
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.02",
+      "MaxTimes": 1,
+      "Remark": "p2提前领域1和血壤 关爆发",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16165,
+              "TargetType": 2
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16164,
+              "TargetType": 2
+            }
+          ]
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SwitchBurst",
+          "Burst": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 0
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.03",
+      "MaxTimes": 1,
+      "Remark": "mt极光 开爆发",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 3
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SwitchBurst",
+          "Burst": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 3
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.04",
+      "MaxTimes": 1,
+      "Remark": "mt刚玉",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 3
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.092",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.05",
+      "MaxTimes": 1,
+      "Remark": "p2关爆发机",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16162,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 6
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.06",
+      "MaxTimes": 1,
+      "Remark": "p2开爆发机",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16162,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 35
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.091",
+      "MaxTimes": 1,
+      "Remark": "p2开盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 21
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.092",
+      "MaxTimes": 1,
+      "Remark": "p2突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 17
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.0921",
+      "MaxTimes": 1,
+      "Remark": "挑衅",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7533,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.091",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.093",
+      "MaxTimes": 1,
+      "Remark": "p2突进1和领域",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16154,
+              "TargetType": 2
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16165,
+              "TargetType": 2
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 30
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.0941",
+      "MaxTimes": 1,
+      "Remark": "疾跑",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 3,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 48
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.0942",
+      "MaxTimes": 1,
+      "Remark": "光心",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16160,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 49
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.0943",
+      "MaxTimes": 1,
+      "Remark": "铁壁",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7531,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 50
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.0944",
+      "MaxTimes": 1,
+      "Remark": "伪装",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16140,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 51
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.0945",
+      "MaxTimes": 1,
+      "Remark": "星云",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16148,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.0944",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.095",
+      "MaxTimes": 1,
+      "Remark": "p2一运刚玉 ",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 54
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.0951",
+      "MaxTimes": 1,
+      "Remark": "极光",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 55
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.11",
+      "MaxTimes": 1,
+      "Remark": "一运落地先手子弹连",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 16146,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.0951",
+          "Delay": 2
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "25542",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.111",
+      "MaxTimes": 1,
+      "Remark": "关弓形",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16159,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.0951",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.112",
+      "MaxTimes": 1,
+      "Remark": "开弓形",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16159,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.12",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.12",
+      "MaxTimes": 1,
+      "Remark": "提前领域",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16165,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.11",
+          "Delay": 3
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.13",
+      "MaxTimes": 1,
+      "Remark": "一运落地开无情",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16138,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.11",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.131",
+      "MaxTimes": 1,
+      "Remark": "无敌",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16152,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 76
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.132",
+      "MaxTimes": 1,
+      "Remark": "刚玉",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.131",
+          "Delay": 3
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.14",
+      "MaxTimes": 1,
+      "Remark": "极光",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 3
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 74
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.15",
+      "MaxTimes": 1,
+      "Remark": "p2关盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 87
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.151",
+      "MaxTimes": 1,
+      "Remark": "等bug修复 先关血壤",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16164,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.15",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.152",
+      "MaxTimes": 1,
+      "Remark": "开血壤",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16164,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.16",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.16",
+      "MaxTimes": 1,
+      "Remark": "突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 90
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.2",
+      "MaxTimes": 1,
+      "Remark": "疾跑",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 3,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 145
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.201",
+      "MaxTimes": 1,
+      "Remark": "关弓形 突进 倍攻",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16159,
+          "Lock": true
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16154,
+          "Lock": true
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 25760,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.2",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.202",
+      "MaxTimes": 1,
+      "Remark": "开弓形 倍攻",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16159,
+          "Lock": false
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 25760,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.2",
+          "Delay": 20
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.203",
+      "MaxTimes": 1,
+      "Remark": "开突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16154,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.2",
+          "Delay": 10
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.21",
+      "MaxTimes": 1,
+      "Remark": "碎屏血仇",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 158
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.211",
+      "MaxTimes": 1,
+      "Remark": "碎屏刚玉D4",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 11
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.21",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.212",
+      "MaxTimes": 1,
+      "Remark": "极光h2",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 7
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "2.211",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.22",
+      "MaxTimes": 1,
+      "Remark": "突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 166
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.23",
+      "MaxTimes": 1,
+      "Remark": "陨石极光d4（关闭中",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 11
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 132
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.231",
+      "MaxTimes": 1,
+      "Remark": "陨石刚玉d4（关闭",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 11
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 124
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.0",
+      "MaxTimes": 1,
+      "Remark": "p3开场光心",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16160,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "光之战士即将在云廊迎接龙诗战争的最终决战。",
+          "Delay": 0
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.01",
+      "MaxTimes": 1,
+      "Remark": "开场mt刚玉",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 3
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "这就是灭绝的龙诗",
+          "Delay": 4
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.02",
+      "MaxTimes": 1,
+      "Remark": "突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.01",
+          "Delay": 16
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.03",
+      "MaxTimes": 1,
+      "Remark": "二分摊血仇",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "所有人类都将灭亡！",
+          "Delay": 30
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.04",
+      "MaxTimes": 1,
+      "Remark": "不延后的爆发药",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_UsePotion"
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_CheckSpellCD",
+          "SpellId": 16138,
+          "CoolDown": 3
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.03",
+          "Delay": 10
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.05",
+      "MaxTimes": 1,
+      "Remark": "开盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.04",
+          "Delay": 30
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.06",
+      "MaxTimes": 1,
+      "Remark": "疾跑",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 3,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "26379",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.07",
+      "MaxTimes": 1,
+      "Remark": "星云",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16148,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.072",
+          "Delay": 7
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.071",
+      "MaxTimes": 1,
+      "Remark": "铁壁",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7531,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "26379",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.072",
+      "MaxTimes": 1,
+      "Remark": "伪装",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16140,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.071",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.08",
+      "MaxTimes": 1,
+      "Remark": "刚玉自己",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.07",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.11",
+      "MaxTimes": 1,
+      "Remark": "极光自己",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.08",
+          "Delay": 3
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "3.12",
+      "MaxTimes": 1,
+      "Remark": "爆发药无情突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.04",
+          "Delay": 22
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.0",
+      "MaxTimes": 1,
+      "Remark": "撞球光心",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16160,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "埃斯蒂尼安阁下！",
+          "Delay": 25
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.01",
+      "MaxTimes": 1,
+      "Remark": "关烈牙（bug需要",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16146,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.12",
+          "Delay": 25
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.02",
+      "MaxTimes": 1,
+      "Remark": "开烈牙",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16146,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.01",
+          "Delay": 2
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_CheckSpellCD",
+          "SpellId": 16138,
+          "CoolDown": 59
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.06",
+      "MaxTimes": 1,
+      "Remark": "刚玉1",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.0",
+          "Delay": 10
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.07",
+      "MaxTimes": 1,
+      "Remark": "刚玉2",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.06",
+          "Delay": 25
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.08",
+      "MaxTimes": 1,
+      "Remark": "极光",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.06",
+          "Delay": 4
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.081",
+      "MaxTimes": 1,
+      "Remark": "铁壁",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7531,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "3.071",
+          "Delay": 90
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.0811",
+      "MaxTimes": 1,
+      "Remark": "突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.081",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.082",
+      "MaxTimes": 1,
+      "Remark": "伪装",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16140,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.081",
+          "Delay": 20
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.09",
+      "MaxTimes": 1,
+      "Remark": "关爆发",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SwitchBurst",
+          "Burst": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.08",
+          "Delay": 20
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.091",
+      "MaxTimes": 1,
+      "Remark": "开爆发",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SwitchBurst",
+          "Burst": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.5",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.092",
+      "MaxTimes": 1,
+      "Remark": "突进2",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.09",
+          "Delay": 14
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.5",
+      "MaxTimes": 1,
+      "Remark": "4.5提前无情关弓形（防三插",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16159,
+          "Lock": true
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16138,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "这就是人类的思想",
+          "Delay": 13
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.501",
+      "MaxTimes": 1,
+      "Remark": "音速破",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 16153,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.5",
+          "Delay": 3
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.502",
+      "MaxTimes": 1,
+      "Remark": "爆破",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16144,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.501",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.51",
+      "MaxTimes": 1,
+      "Remark": "开弓形",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16159,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.5",
+          "Delay": 8
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.52",
+      "MaxTimes": 1,
+      "Remark": "血仇",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "危险！",
+          "Delay": 9
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.53",
+      "MaxTimes": 1,
+      "Remark": "光心",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16160,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.52",
+          "Delay": 9
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.54",
+      "MaxTimes": 1,
+      "Remark": "关盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.52",
+          "Delay": 4
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.55",
+      "MaxTimes": 1,
+      "Remark": "极光",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 7
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.53",
+          "Delay": 8
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.56",
+      "MaxTimes": 1,
+      "Remark": "突进1",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.5",
+          "Delay": 10
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.57",
+      "MaxTimes": 1,
+      "Remark": "突进2",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.53",
+          "Delay": 15
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.58",
+      "MaxTimes": 1,
+      "Remark": "刚玉给d4（先打开使用",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 11
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.52",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "4.59",
+      "MaxTimes": 1,
+      "Remark": "极光d4",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 11
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.58",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.0",
+      "MaxTimes": 1,
+      "Remark": "p5提前无情",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16138,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "没事就好",
+          "Delay": 11
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.01",
+      "MaxTimes": 1,
+      "Remark": "提前音速破",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 16153,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.0",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.02",
+      "MaxTimes": 1,
+      "Remark": "提前领域",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16165,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.0",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.03",
+      "MaxTimes": 1,
+      "Remark": "关烈牙",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16146,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.0",
+          "Delay": 12
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.04",
+      "MaxTimes": 1,
+      "Remark": "开烈牙",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16146,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.03",
+          "Delay": 30
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.05",
+      "MaxTimes": 1,
+      "Remark": "刚玉给mt",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 3
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "变成我改革的垫脚石！",
+          "Delay": 8
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.07",
+      "MaxTimes": 1,
+      "Remark": "突进1",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.0",
+          "Delay": 10
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.08",
+      "MaxTimes": 1,
+      "Remark": "突进2",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.05",
+          "Delay": 15
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.09",
+      "MaxTimes": 1,
+      "Remark": "上天前领域",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16144,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.0",
+          "Delay": 32
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.1",
+      "MaxTimes": 1,
+      "Remark": "一运疾跑",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 3,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.06",
+          "Delay": 25
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.11",
+      "MaxTimes": 1,
+      "Remark": "一运光心",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16160,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "4.53",
+          "Delay": 90
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.12",
+      "MaxTimes": 1,
+      "Remark": "一运落地血仇",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.1",
+          "Delay": 10
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "25542",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.13",
+      "MaxTimes": 1,
+      "Remark": "伪装",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16140,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.12",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.131",
+      "MaxTimes": 1,
+      "Remark": "关烈牙",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16146,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.1",
+          "Delay": 4
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.132",
+      "MaxTimes": 1,
+      "Remark": "开烈牙",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16146,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.15",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.15",
+      "MaxTimes": 1,
+      "Remark": "伪装后无情",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16138,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.13",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.16",
+      "MaxTimes": 1,
+      "Remark": "无情后音速破",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 16153,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.13",
+          "Delay": 0
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.17",
+      "MaxTimes": 1,
+      "Remark": "音速破接领域",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16165,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.16",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.171",
+      "MaxTimes": 1,
+      "Remark": "音速破后接倍攻",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 25760,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.16",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.18",
+      "MaxTimes": 1,
+      "Remark": "挑衅",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7533,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.13",
+          "Delay": 26
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.181",
+      "MaxTimes": 1,
+      "Remark": "开盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.13",
+          "Delay": 24
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.193",
+      "MaxTimes": 1,
+      "Remark": "关爆发机和烈牙",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16146,
+          "Lock": true
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16162,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.13",
+          "Delay": 16
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.194",
+      "MaxTimes": 1,
+      "Remark": "开爆发机和烈牙",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16162,
+          "Lock": false
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16146,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.193",
+          "Delay": 20
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.195",
+      "MaxTimes": 1,
+      "Remark": "突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.13",
+          "Delay": 17
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.196",
+      "MaxTimes": 1,
+      "Remark": "突进2",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.195",
+          "Delay": 13
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.2",
+      "MaxTimes": 1,
+      "Remark": "二运疾跑",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 3,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.1",
+          "Delay": 62
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.201",
+      "MaxTimes": 1,
+      "Remark": "陨石提前无情",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16138,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.2",
+          "Delay": 17
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.202",
+      "MaxTimes": 1,
+      "Remark": "陨石马上倍攻",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 25760,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.201",
+          "Delay": 3
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.21",
+      "MaxTimes": 1,
+      "Remark": "血仇 开音速和弓形",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 0
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16153,
+          "Lock": false
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16159,
+          "Lock": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.2",
+          "Delay": 10
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "25542",
+          "Delay": 0
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.211",
+      "MaxTimes": 1,
+      "Remark": "关音速和弓形",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16159,
+          "Lock": true
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_LockSpell",
+          "SpellId": 16153,
+          "Lock": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.2",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.212",
+      "MaxTimes": 1,
+      "Remark": "无敌",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16152,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.2",
+          "Delay": 5
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "25543",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.213",
+      "MaxTimes": 1,
+      "Remark": "刚玉",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.212",
+          "Delay": 7
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.214",
+      "MaxTimes": 1,
+      "Remark": "极光",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.212",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.215",
+      "MaxTimes": 1,
+      "Remark": "突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.214",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "5.22",
+      "MaxTimes": 1,
+      "Remark": "光心",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16160,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "5.11",
+          "Delay": 90
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.0",
+      "MaxTimes": 1,
+      "Remark": "p6开场吃爆发药（无目标吃不了自己手按",
+      "CondLogicType": 0,
+      "TriggerActions": [],
+      "TriggerConds": []
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.01",
+      "MaxTimes": 1,
+      "Remark": "挑衅圣龙（B点出现",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7533,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "我要把你们撕成碎片",
+          "Delay": 0
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.011",
+      "MaxTimes": 1,
+      "Remark": "突进",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.01",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.012",
+      "MaxTimes": 1,
+      "Remark": "突进2",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16154,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.02",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.02",
+      "MaxTimes": 1,
+      "Remark": "第一次冰火星云",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16148,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.01",
+          "Delay": 7
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.021",
+      "MaxTimes": 1,
+      "Remark": "刚玉最好手操这里固定给自己",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "27957",
+          "Delay": 3
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.03",
+      "MaxTimes": 1,
+      "Remark": "第一次远近前44分摊铁壁",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7531,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "不再伤害人类性命",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.031",
+      "MaxTimes": 1,
+      "Remark": "刚玉",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.03",
+          "Delay": 14
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.032",
+      "MaxTimes": 1,
+      "Remark": "极光",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.031",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.033",
+      "MaxTimes": 1,
+      "Remark": "关爆发（如果是靠近就不用关爆发",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SwitchBurst",
+          "Burst": false
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.03",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.04",
+      "MaxTimes": 1,
+      "Remark": "十字火光心",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16160,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.041",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.041",
+      "MaxTimes": 1,
+      "Remark": "十字火血仇",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "27974",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.043",
+      "MaxTimes": 1,
+      "Remark": "疾跑去场中解毒",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 3,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.04",
+          "Delay": 12
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.044",
+      "MaxTimes": 1,
+      "Remark": "十字后开爆发",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SwitchBurst",
+          "Burst": true
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.04",
+          "Delay": 15
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.045",
+      "MaxTimes": 1,
+      "Remark": "第二次分摊伪装覆盖第二次远近",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16140,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.044",
+          "Delay": 5
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "27969",
+          "Delay": 4
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.05",
+      "MaxTimes": 1,
+      "Remark": "第二次远近刚玉（右场刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "27940",
+          "Delay": 6
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.04",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.05001",
+      "MaxTimes": 1,
+      "Remark": "第二次远近刚玉（左场刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "27942",
+          "Delay": 6
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.04",
+          "Delay": 8
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.0501",
+      "MaxTimes": 1,
+      "Remark": "极光",
+      "CondLogicType": 1,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.05",
+          "Delay": 2
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.05001",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.06",
+      "MaxTimes": 1,
+      "Remark": "第二次冰火铁壁",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7531,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "27957",
+          "Delay": 3
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.051",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.061",
+      "MaxTimes": 1,
+      "Remark": "第二次冰火星云",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16148,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.06",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.062",
+      "MaxTimes": 1,
+      "Remark": "血仇俯冲",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "27967",
+          "Delay": 2
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.061",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.063",
+      "MaxTimes": 1,
+      "Remark": "刚玉俯冲",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "6.062",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "6.064",
+      "MaxTimes": 1,
+      "Remark": "关盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "这样终于可以去见我心爱的希瓦",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.0",
+      "MaxTimes": 1,
+      "Remark": "开场光心",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16160,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "这样人类与龙族的融合之路",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.01",
+      "MaxTimes": 1,
+      "Remark": "开盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 0,
+          "TargetType": 0
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "用你悲叹的光辉,烧尽光之使徒",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.0101",
+      "MaxTimes": 1,
+      "Remark": "开场给d4刚玉",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 11
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.0",
+          "Delay": 9
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.011",
+      "MaxTimes": 1,
+      "Remark": "铁壁接一刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7531,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.01",
+          "Delay": 13
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.012",
+      "MaxTimes": 1,
+      "Remark": "刚玉",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.011",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.02",
+      "MaxTimes": 1,
+      "Remark": "一分摊挑衅",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7533,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "用你怨念的光辉,将光之使徒打入死亡深渊",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.021",
+      "MaxTimes": 1,
+      "Remark": "伪装星云",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16140,
+              "TargetType": 0
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16148,
+              "TargetType": 0
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.02",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.022",
+      "MaxTimes": 1,
+      "Remark": "刚玉接二刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.012",
+          "Delay": 25
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.023",
+      "MaxTimes": 1,
+      "Remark": "关盾退避",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16142,
+              "TargetType": 1
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 7537,
+              "TargetType": 5
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_GameLog",
+          "ContainValue": "用你悔恨的光辉,将光之使徒连同大地一起化为焦土",
+          "Delay": 1
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.03",
+      "MaxTimes": 1,
+      "Remark": "一陨血仇",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.023",
+          "Delay": 7
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.031",
+      "MaxTimes": 1,
+      "Remark": "极光接三刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.03",
+          "Delay": 20
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.04",
+      "MaxTimes": 1,
+      "Remark": "开盾挑衅",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16142,
+              "TargetType": 1
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 7533,
+              "TargetType": 2
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.023",
+          "Delay": 35
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.041",
+      "MaxTimes": 1,
+      "Remark": "刚玉接四刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.023",
+          "Delay": 46
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.05",
+      "MaxTimes": 1,
+      "Remark": "二摊无敌",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16152,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "29454",
+          "Delay": 5
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.041",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.051",
+      "MaxTimes": 1,
+      "Remark": "关盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.05",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.06",
+      "MaxTimes": 1,
+      "Remark": "刚玉接五刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.041",
+          "Delay": 25
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.07",
+      "MaxTimes": 1,
+      "Remark": "二陨血仇",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "28058",
+          "Delay": 8
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.06",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.071",
+      "MaxTimes": 1,
+      "Remark": "开盾挑衅",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16142,
+              "TargetType": 1
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 7533,
+              "TargetType": 2
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.07",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.08",
+      "MaxTimes": 1,
+      "Remark": "刚玉接六刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 25758,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.06",
+          "Delay": 25
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.081",
+      "MaxTimes": 1,
+      "Remark": "地火关盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.08",
+          "Delay": 13
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.082",
+      "MaxTimes": 1,
+      "Remark": "极光接七刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16151,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.08",
+          "Delay": 20
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.09",
+      "MaxTimes": 1,
+      "Remark": "三滩铁壁伪装",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16140,
+              "TargetType": 1
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 7531,
+              "TargetType": 1
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_EnemyCastSpell",
+          "strs": null,
+          "SpellName": "29454",
+          "Delay": 1
+        },
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.082",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.091",
+      "MaxTimes": 1,
+      "Remark": "光心星云",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16160,
+              "TargetType": 1
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16148,
+              "TargetType": 1
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.09",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.092",
+      "MaxTimes": 1,
+      "Remark": "刚玉极光",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 25758,
+              "TargetType": 1
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 16151,
+              "TargetType": 1
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.091",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.093",
+      "MaxTimes": 1,
+      "Remark": "关盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 16142,
+          "TargetType": 1
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.092",
+          "Delay": 2
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.10",
+      "MaxTimes": 1,
+      "Remark": "血仇接八刀",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7535,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterOtherTrigger",
+          "GroupID": "7.07",
+          "Delay": 60
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "7.2",
+      "MaxTimes": 1,
+      "Remark": "征服绝境·龙诗战争",
+      "CondLogicType": 0,
+      "TriggerActions": [],
+      "TriggerConds": []
+    }
+  ]
+}

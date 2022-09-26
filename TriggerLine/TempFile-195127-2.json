@@ -1,0 +1,69 @@
+{
+  "$type": "AEAssist.TriggerLine",
+  "Author": null,
+  "ConfigVersion": 4,
+  "CurrZoneId": 0,
+  "Name": null,
+  "SubZoneId": 0,
+  "TargetJob": "Any",
+  "Triggers": [
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "1",
+      "MaxTimes": 1,
+      "Remark": "",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SpellQueue",
+          "Data": [
+            {
+              "$type": "AEAssist.TriggerAction.SpellQueueSlotConfig",
+              "GCDQueue": [
+                24290,
+                24292
+              ],
+              "AbilityQueue": [],
+              "UsePotion": false
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 5
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2",
+      "MaxTimes": 1,
+      "Remark": "",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SpellQueue",
+          "Data": [
+            {
+              "$type": "AEAssist.TriggerAction.SpellQueueSlotConfig",
+              "GCDQueue": [
+                24290,
+                24291
+              ],
+              "AbilityQueue": [],
+              "UsePotion": false
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 1
+        }
+      ]
+    }
+  ]
+}

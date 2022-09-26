@@ -1,0 +1,201 @@
+{
+  "$type": "AEAssist.TriggerLine",
+  "Author": "绝龙诗",
+  "ConfigVersion": 4,
+  "CurrZoneId": 0,
+  "Name": "H2",
+  "SubZoneId": 0,
+  "TargetJob": "Sage",
+  "Triggers": [
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.0",
+      "MaxTimes": 1,
+      "Remark": "倒计时3秒爆发药（关闭中",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SwitchPotion",
+          "UsePotion": true
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 24290,
+          "TargetType": 0
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_CountDown",
+          "Time": 3000
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.01",
+      "MaxTimes": 1,
+      "Remark": "起手贤炮",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastGCD",
+          "SpellId": 24318,
+          "TargetType": 2
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_CountDown",
+          "Time": 1500
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.02",
+      "MaxTimes": 1,
+      "Remark": "混合mt",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 24317,
+          "TargetType": 3
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 9
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.021",
+      "MaxTimes": 1,
+      "Remark": "牛汁mt",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 24303,
+          "TargetType": 3
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 20
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.03",
+      "MaxTimes": 1,
+      "Remark": "即刻",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_CastAbility",
+          "SpellId": 7561,
+          "TargetType": 0
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 30
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.04",
+      "MaxTimes": 1,
+      "Remark": "上天罩子自生 群盾 单盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_AbilityQueue",
+          "SpellIdsQueue": [
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 24288,
+              "TargetType": 1
+            },
+            {
+              "$type": "AEAssist.Define.SpellData",
+              "SpellId": 24298,
+              "TargetType": 1
+            }
+          ]
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SpellQueue",
+          "Data": [
+            {
+              "$type": "AEAssist.TriggerAction.SpellQueueSlotConfig",
+              "GCDQueue": [
+                24290,
+                24292
+              ],
+              "AbilityQueue": [],
+              "UsePotion": false
+            }
+          ]
+        },
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SpellQueue",
+          "Data": [
+            {
+              "$type": "AEAssist.TriggerAction.SpellQueueSlotConfig",
+              "GCDQueue": [
+                24290,
+                24291
+              ],
+              "AbilityQueue": [],
+              "UsePotion": false
+            }
+          ]
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 32
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.05",
+      "MaxTimes": 1,
+      "Remark": "群盾",
+      "CondLogicType": 0,
+      "TriggerActions": [
+        {
+          "$type": "AEAssist.TriggerAction.TriggerAction_SpellQueue",
+          "Data": []
+        }
+      ],
+      "TriggerConds": [
+        {
+          "$type": "AEAssist.TriggerCond.TriggerCond_AfterBattleStart",
+          "Delay": 0
+        }
+      ]
+    },
+    {
+      "$type": "AEAssist.Trigger",
+      "Id": "2.1",
+      "MaxTimes": 1,
+      "Remark": "一运落地罩子整体论",
+      "CondLogicType": 0,
+      "TriggerActions": [],
+      "TriggerConds": []
+    }
+  ]
+}
